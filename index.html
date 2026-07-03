@@ -116,14 +116,47 @@
   
   nav.nav-links.active{display:flex} 
 
-  .menu-btn{display:block} 
+  .menu-btn{display:none} 
 
   .btn-whatsapp{font-size:12px; padding:8px 12px; margin-left:auto; margin-right:12px}
 
   .grid-3{grid-template-columns:repeat(2,1fr); gap:12px} /* Menú en 2 columnas */
   .cta{flex-direction:column; width:100%; gap:10px} /* Botones del hero */
   .cta .btn{width:100%}
-}
+
+@media (max-width: 768px) {
+  .navbar { position: relative; }
+  
+  .btn-whatsapp { display: none !important; } /* Quita el botón naranja grande en cel */
+  
+  .nav-links { 
+    display: none; /* Oculta el menú normal */
+    flex-direction: column; 
+    gap: 0;
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    right: 0; 
+    background: #0F0F10; 
+    border-top: 1px solid #222; 
+    z-index: 999;
+  }
+  .nav-links a {
+    padding: 16px 20px;
+    border-bottom: 1px solid #222;
+  }
+  .nav-links.active { display: flex; } /* El JS lo activa al tocar ☰ */
+  
+  .menu-btn { 
+    display: block; /* Muestra el ☰ */
+    font-size: 24px; 
+    background: none; 
+    border: 0; 
+    color: #fff; 
+    cursor: pointer;
+    margin-left: auto;
+  }
+
   </style>
 </head>
 <body>
@@ -152,8 +185,7 @@
       <h1>Sabor a brasa, <br>carne de verdad.</h1>
       <p>En Bendita Parrilada solo usamos cortes premium y carbón de leña. Ven a probar la parrilla que Valledupar estaba esperando.</p>
       <div class="cta">
-        <a href="#menu" class="btn">Ver Menú</a>
-        <a href="#reserva" class="btn btn-outline">Reservar Mesa</a>
+    <a href="#menu">Menú</a> <a href="#nosotros">Nosotros</a> <a href="#galeria">Galería</a> <a href="#reserva">Reserva</a>
       </div>
     </div>
   </main>
