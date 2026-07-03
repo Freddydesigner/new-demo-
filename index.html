@@ -28,28 +28,25 @@
     img{max-width:100%;display:block;border-radius:12px}
     .container{width:min(1100px, 90%);margin-inline:auto}
 
-    /* Header */
+    /* === HEADER / NAVBAR === */
     header{
       position:sticky;top:0;z-index:50;
       backdrop-filter:saturate(180%) blur(12px);
       background:rgba(15,15,16,.7);
       border-bottom:1px solid rgba(255,255,255,.05);
     }
-    nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-    .logo{font-weight:800;font-size:1.2rem;letter-spacing:.5px}
+    .navbar{display:flex;align-items:center;justify-content:space-between;padding:16px 0;position:relative}
+    .logo{font-weight:800;font-size:1.2rem;letter-spacing:.5px;text-decoration:none;color:var(--text)}
     .logo span{color:var(--accent)}
-    nav ul{display:flex;gap:24px;list-style:none}
-    nav a{color:var(--muted);text-decoration:none;font-weight:500}
-    nav a:hover{color:var(--text)}
-    .btn{
-      background:var(--accent);color:#000;text-decoration:none;
-      padding:12px 20px;border-radius:999px;font-weight:700;
-      transition:.2s;box-shadow:var(--shadow)
-    }
-    .btn:hover{filter:brightness(1.1);transform:translateY(-2px)}
-    .btn-outline{background:transparent;border:1px solid var(--muted);color:var(--text)}
 
-    /* Hero */
+    .nav-links{display:flex;gap:24px;list-style:none}
+    .nav-links a{color:var(--muted);text-decoration:none;font-weight:500}
+    .nav-links a:hover{color:var(--text)}
+
+    .btn-whatsapp{background:var(--accent);color:#000;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;white-space:nowrap}
+    .menu-btn{display:none;font-size:24px;background:none;border:0;color:#fff;cursor:pointer}
+
+    /* === HERO === */
     .hero{
       padding:100px 0 60px;
       background:
@@ -60,12 +57,10 @@
     .hero p{color:var(--muted);font-size:1.1rem;max-width:520px;margin-bottom:24px}
     .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
 
-    /* Secciones */
+    /* === SECCIONES / CARDS === */
     section{padding:80px 0}
     h2{font-size:2rem;margin-bottom:8px}
     .sub{color:var(--muted);margin-bottom:32px}
-
-    /* Menú */
     .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
     .card{
       background:var(--card);padding:20px;border-radius:var(--radius);
@@ -75,89 +70,42 @@
     .card h3{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
     .price{color:var(--accent);font-weight:800}
 
-    /* Galería */
-    .galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .galeria img{aspect-ratio:1/1;object-fit:cover}
-
-    /* Reserva */
-    .reserva{
-      background:var(--card);padding:32px;border-radius:var(--radius);
-      display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center
+    /* === BOTONES === */
+    .btn{
+      background:var(--accent);color:#000;text-decoration:none;
+      padding:12px 20px;border-radius:999px;font-weight:700;
+      transition:.2s;box-shadow:var(--shadow);text-align:center
     }
-    input,textarea{
-      width:100%;padding:12px 14px;border-radius:10px;
-      border:1px solid rgba(255,255,255,.1);background:#0F0F10;color:var(--text)
+    .btn:hover{filter:brightness(1.1);transform:translateY(-2px)}
+    .btn-outline{background:transparent;border:1px solid var(--muted);color:var(--text)}
+
+    
+    @media (max-width: 768px){
+      .btn-whatsapp{display:none !important;}
+      
+      .nav-links{
+        display:none;
+        flex-direction:column;
+        gap:0;
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        background:#0F0F10;
+        border-top:1px solid #222;
+        z-index:999;
+      }
+      .nav-links a{padding:16px 20px;border-bottom:1px solid #222}
+      .nav-links.active{display:flex} /* Se activa con JS */
+      
+      .menu-btn{display:block;margin-left:auto} /* Muestra ☰ */
+
+      .grid-3{grid-template-columns:1fr} /* Menú en 1 columna pa' cel */
+      .hero .cta{flex-direction:column;width:100%;gap:10px}
+      .hero .cta .btn{width:100%}
     }
-    label{font-size:.9rem;color:var(--muted);margin-bottom:6px;display:block}
-
-    /* Footer */
-    footer{border-top:1px solid rgba(255,255,255,.05);padding:40px 0;color:var(--muted)}
-    .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
-/* BASE NAVBAR */
-.navbar{display:flex; align-items:center; justify-content:space-between; padding:16px 5%}
-.logo span{color:#ff7a00; display:block}
-.nav-links{display:flex; gap:24px}
-.menu-btn{display:none; background:none; border:none; font-size:28px; color:#fff}
-.btn-whatsapp{background:#ff7a00; color:#000; padding:10px 18px; border-radius:999px; font-weight:700; text-decoration:none; white-space:nowrap}
-@media(max-width:768px){
-  nav.nav-links{
-    display:none;
-    position:absolute;
-    top:100%;
-    left:0;
-    width:100%;
-    background:#1a1a1a;
-    flex-direction:column;
-    padding:16px;
-    gap:0;
-    border-top:1px solid #222;
-    z-index:99;
-  }
-  
-  nav.nav-links.active{display:flex} 
-
-  .menu-btn{display:none} 
-
-  .btn-whatsapp{font-size:12px; padding:8px 12px; margin-left:auto; margin-right:12px}
-
-  .grid-3{grid-template-columns:repeat(2,1fr); gap:12px} /* Menú en 2 columnas */
-  .cta{flex-direction:column; width:100%; gap:10px} /* Botones del hero */
-  .cta .btn{width:100%}
-
-@media (max-width: 768px) {
-  .navbar { position: relative; }
-  
-  .btn-whatsapp { display: none !important; } /* Quita el botón naranja grande en cel */
-  
-  .nav-links { 
-    display: none; /* Oculta el menú normal */
-    flex-direction: column; 
-    gap: 0;
-    position: absolute; 
-    top: 100%; 
-    left: 0; 
-    right: 0; 
-    background: #0F0F10; 
-    border-top: 1px solid #222; 
-    z-index: 999;
-  }
-  .nav-links a {
-    padding: 16px 20px;
-    border-bottom: 1px solid #222;
-  }
-  .nav-links.active { display: flex; } /* El JS lo activa al tocar ☰ */
-  
-  .menu-btn { 
-    display: block; /* Muestra el ☰ */
-    font-size: 24px; 
-    background: none; 
-    border: 0; 
-    color: #fff; 
-    cursor: pointer;
-    margin-left: auto;
-  }
-
-  </style>
+</style>
+   
 </head>
 <body>
 <header class="navbar">
