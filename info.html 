@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Información - Bendita Parrillada</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body style="background:#000; color:#fff; font-family:Arial; padding:20px;">
-  
+
   <div style="max-width:700px; margin:0 auto; text-align:center;">
     <h1 style="color:#ff6a00; margin-bottom:20px;">Nuestra Información</h1>
-    
+
     <div style="background:#1a1a1a; padding:20px; border-radius:12px; margin-bottom:20px; text-align:left;">
       <h2 style="color:#ff6a00;">📍 Ubicación</h2>
       <p>Cra 5 # 12-34, Valledupar, Cesar</p>
@@ -22,18 +21,15 @@
     </div>
 
     <div style="background:#1a1a1a; padding:20px; border-radius:12px; margin-bottom:20px; text-align:left;">
-      <h2 style="color:#ff6a00;">📱 Contacto</h2>
+      <h2 style="color:#ff6a00;">📞 Contacto</h2>
       <p>WhatsApp: 301 331 0343</p>
       <a href="https://wa.me/573013310343" style="display:inline-block; background:#25D366; color:#fff; padding:12px 20px; border-radius:8px; text-decoration:none; margin-top:10px;">Escríbenos</a>
     </div>
-
   </div>
 
   <a href="index.html" style="position:fixed; bottom:20px; right:20px; background:#ff6a00; color:#000; padding:12px 20px; border-radius:50px; text-decoration:none; font-weight:800;">
     ← Inicio
   </a>
 
-</body>
-</html>
 </body>
 </html>
