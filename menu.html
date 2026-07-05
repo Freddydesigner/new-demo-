@@ -122,6 +122,38 @@
       .hero .cta{flex-direction:column;width:100%;gap:10px}
       .hero .cta .btn{width:100%}
     } 
+.slider{
+  width:100%;
+  max-width:800px;
+  margin:0 auto;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.slides{
+  display:flex;
+  animation: slide 9s infinite;
+}
+.slides img{
+  width:100%;
+  flex-shrink:0;
+  height:400px;
+  object-fit:cover;
+}
+
+@keyframes slide{
+ 0% { transform: translateX(0); }
+ 30% { transform: translateX(0); }
+ 33% { transform: translateX(-100%); }
+ 63% { transform: translateX(-100%); }
+ 66% { transform: translateX(-200%); }
+ 96% { transform: translateX(-200%); }
+ 100% { transform: translateX(0); }
+}
+
+@media (max-width: 768px){
+  .slides img{ height:250px; }
+}
 </style>
 </head>
 <body>
@@ -179,17 +211,18 @@
       </div>
     </div>
   </section>
+<section id="galeria">
+  <div class="container">
+    <h2>Galeria</h2>
+    <p class="sub">Un vistazo a Bendita Parrillada</p>
 
-  <section id="nosotros" style="background:var(--card)">
-    <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
-      <div>
-        <h2>Carne + Fuego = El Fuego</h2>
-        <p class="sub">Somos una parrilla familiar en Valledupar. Seleccionamos cada corte, maduramos la carne y la asamos solo con carbón de leña. Sin atajos, sin humo líquido. Solo brasa real.</p>
+    <div class="slider">
+      <div class="slides">
+        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600" alt="Parrilla">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600" alt="Plato de carne">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=600" alt="Ambiente restaurante">
       </div>
-      <img src="https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=800&auto=format" alt="Parrillero asando carne">
-    </div>
-  </section>
-
+</section>
   <section id="reserva" style="background:#000; padding:50px 20px; color:#fff;">
   <div class="container">
     <div class="reserva-info" style="max-width:700px; margin:0 auto; text-align:center;">
