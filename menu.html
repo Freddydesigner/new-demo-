@@ -169,7 +169,6 @@ section:first-of-type h1 {
   line-height: 1.2;
 }
 
-/* DAR AIRE ENTRE TITULO Y TARJETAS */
 .grid-3 {
   margin-top: 30px;
   gap: 16px; /* ya tienes grid arriba, solo agregamos gap */
@@ -178,13 +177,23 @@ section:first-of-type h1 {
   padding: 20px;
 }
 
-/* QUE EL BOTON OCUPE TODO EN CEL */
 @media (max-width: 768px){
   .hero .cta .btn{
     width: 100%;
     padding: 16px 20px;
     font-size: 16px;
-  }
+  }    .btn-secundario {
+      background: transparent;
+      color: #ffffff;
+      border: 2px solid #ff8333;
+      padding: 16px 30px;
+      border-radius: 12px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .btn-secundario:hover { background: #ff8333; color: #000; }
+
+
 
 </style>
 </head>
@@ -218,6 +227,11 @@ section:first-of-type h1 {
       <p>En Bendita Parrillada solo usamos cortes premium y carbón de leña. Ven a probar la parrilla que Valledupar estaba esperando.</p>
       <div class="cta">
         <a href="#menu" class="btn">Ver Menú</a>
+
+<div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 40px 0;">
+  <a href="galeria.html" class="btn btn-primario">VER GALERÍA 📸</a>
+  <a href="index.html" class="btn btn-secundario">← VOLVER AL INICIO</a>
+</div>
       </div>
     </div>
   </main>
