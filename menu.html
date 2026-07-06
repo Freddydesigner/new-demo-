@@ -27,7 +27,7 @@
     img{max-width:100%;display:block;border-radius:12px}
     .container{width:min(1100px, 90%);margin-inline:auto}
 
-    /* === HEADER / NAVBAR === */
+   
     header{
       position:sticky;
       top:0;
@@ -37,7 +37,7 @@
     }
     .navbar{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
     
-    /* LOGO ARREGLADO */
+  
     .logo{
       font-weight:800;
       font-size:1.3rem;
@@ -56,7 +56,7 @@
     .btn-whatsapp{background:var(--accent);color:#000;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700;white-space:nowrap}
     .menu-btn{display:none;font-size:24px;background:none;border:0;color:#fff;cursor:pointer}
 
-    /* === HERO === */
+    
     .hero{
       padding:100px 0 60px;
       background:
@@ -67,7 +67,7 @@
     .hero p{color:var(--muted);font-size:1.1rem;max-width:520px;margin-bottom:24px}
    
 
-/* CONTENEDOR */
+
 .hero-botones {
   display: flex;
   gap: 12px;
@@ -76,7 +76,6 @@
   margin-top: 25px;
 }
 
-/* LOS 3 BOTONES IGUALES */
 .btn-ghost {
   background: rgba(0,0,0,0.3); /* fondo negro transparente */
   backdrop-filter: blur(4px); /* efecto vidrio pro */
@@ -103,7 +102,6 @@
   .btn-ghost { width: 100%; }
 }
 
-    /* === SECCIONES / CARDS === */
     section{padding:80px 0}
     h2{font-size:2rem;margin-bottom:8px}
     .sub{color:var(--muted);margin-bottom:32px}
@@ -116,16 +114,7 @@
     .card h3{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
     .price{color:var(--accent);font-weight:800}
 
-    /* === BOTONES === */
-    .btn{
-      background:var(--accent);color:#000;text-decoration:none;
-      padding:12px 20px;border-radius:999px;font-weight:700;
-      transition:.2s;box-shadow:var(--shadow);text-align:center
-    }
-    .btn:hover{filter:brightness(1.1);transform:translateY(-2px)}
-    .btn-outline{background:transparent;border:1px solid var(--muted);color:var(--text)}
-
-    /* === GALERIA / RESERVA / FOOTER === */
+ 
     .galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
     .reserva{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;background:var(--card);padding:30px;border-radius:var(--radius)}
     .reserva input{width:100%;padding:12px;margin:8px 0;background:#111;border:1px solid #333;color:#fff;border-radius:8px}
@@ -189,19 +178,17 @@
 
 @media (max-width: 768px){
   .slides img{ height:250px; }
-}
 
-/* SOMBRA AL TEXTO DEL HERO PARA QUE SE LEA */
 section:first-of-type p {
   color: #e0e0e0; /* más blanco */
-  text-shadow: 0 2px 8px rgba(0,0,0,0.8); /* sombra negra atrás */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
   font-size: 15px;
   line-height: 1.6;
   margin-bottom: 25px;
 }
 
 section:first-of-type h1 {
-  text-shadow: 0 2px 10px rgba(0,0,0,0.9); /* que el título resalte más */
+  text-shadow: 0 2px 10px rgba(0,0,0,0.9);
   line-height: 1.2;
 }
 
@@ -235,8 +222,8 @@ section:first-of-type h1 {
 </head>
 <body>
 
-<header> <!-- <-- SOLO 1 HEADER -->
-  <div class="container navbar"> <!-- <-- ENVUELTO EN DIV.CONTAINER -->
+<header> 
+  <div class="container navbar"> 
     <a href="#" class="logo">
       Bendita <span>Parrillada</span>
     </a>
@@ -254,21 +241,16 @@ section:first-of-type h1 {
     <button class="menu-btn" id="menu-btn" aria-label="Abrir menú">
       ☰
     </button>
-  </div> <!-- <-- CIERRA EL DIV.CONTAINER -->
-</header> <!-- <-- CIERRA EL HEADER AQUÍ. LAS SECTIONS VAN AFUERA -->
+  </div> 
+</header> 
 
 <main class="hero">
-    <div class="container">
       <h1>Sabor a brasa, <br>carne de verdad.</h1>
       <p>En Bendita Parrillada solo usamos cortes premium y carbón de leña. Ven a probar la parrilla que Valledupar estaba esperando.</p>
-      <div class="cta">
-        <a href="#menu" class="btn">Ver Menú</a>
-
-<div class="hero-botones">
+     
   <a href="#menu" class="btn btn-ghost">Ver Menú</a>
   <a href="galeria.html" class="btn btn-ghost">VER GALERÍA 📸</a>
   <a href="index.html" class="btn btn-ghost">← VOLVER AL INICIO</a>
-</div>
     </div>
   </main>
 
