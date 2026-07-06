@@ -201,20 +201,49 @@ section:first-of-type h1 {
 }
 
 @media (max-width: 768px){
-  .hero .cta .btn{
-    width: 100%;
-    padding: 16px 20px;
-    font-size: 16px;
-  }    .btn-secundario {
-      background: transparent;
-      color: #ffffff;
-      border: 2px solid #ff8333;
-      padding: 16px 30px;
-      border-radius: 12px;
-      font-weight: bold;
-      text-decoration: none;
-    }
+  
+ 
     .btn-secundario:hover { background: #ff8333; color: #000; }
+/* CONTENEDOR DE LOS 2 BOTONES */
+.hero-botones {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+/* BOTONES PEQUEÑOS BLANCOS TRANSPARENTES */
+.btn-ghost {
+  background: rgba(255,255,255,0.1); /* blanco transparente */
+  backdrop-filter: blur(6px); /* efecto vidrio */
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.6); /* borde blanco fino */
+  padding: 10px 20px; /* más pequeños */
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 13px; /* letra más pequeña */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* HOVER: SE PONE BLANCO COMPLETO, NO NARANJA */
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.9);
+  color: #000;
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+/* EN CELULAR */
+@media (max-width: 768px){
+  .hero-botones { flex-direction: column; align-items: center; }
+  .btn-ghost { width: 80%; }
+}
+
+
+
 
 
 
