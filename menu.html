@@ -17,7 +17,7 @@
 
 body{ margin: 0; background: var(--negro); color: var(--blanco); font-family: 'Poppins', sans-serif; }
 
-/* EFECTOS TITULOS */
+/* SOLO ESTOS 3 TITULOS TIEN COLOR */
 .fire-title {
   font-size: 28px; font-weight: 900; text-align: left; color: #ff3300;
   text-shadow: 0 0 5px #ff0000, 0 0 10px #ff5500, 0 0 20px #ff8800;
@@ -39,6 +39,9 @@ body{ margin: 0; background: var(--negro); color: var(--blanco); font-family: 'P
 }
 @keyframes brasaGlow { 0%{transform:translateY(0);} 100%{transform:translateY(-2px);} }
 
+/* Todo lo demás normal */
+h2, h3{ color: var(--blanco); }
+
 /* HERO */
 .hero{ position: relative; padding: 60px 20px 40px; background: url('https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=1000') center/cover no-repeat; }
 .hero::before{ content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); }
@@ -54,6 +57,21 @@ body{ margin: 0; background: var(--negro); color: var(--blanco); font-family: 'P
 .card h3{ font-size: 1.1rem; font-weight: 700; margin: 0; }
 .price{ color: var(--naranja); font-size: 1.2rem; font-weight: 800; }
 .card p{ color: var(--gris-texto); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+
+/* FOOTER SEPARADO */
+.card-footer{
+  background: var(--gris-card);
+  border-radius: 16px;
+  padding: 25px 20px;
+  margin: 40px 20px 20px 20px;
+  text-align: center;
+  border-top: 2px solid var(--naranja);
+}
+.card-footer p{
+  color: var(--gris-texto);
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
 
 </style>
 </head>
@@ -76,7 +94,7 @@ body{ margin: 0; background: var(--negro); color: var(--blanco); font-family: 'P
 </section>
 
 <section style="padding: 40px 20px; background: #000;">
-  <h2 class="fire-title">Hamburguesas🍔🍔</h2> 
+  <h2 class="fire-title">Hamburguesas🍔</h2> 
   <p style="color: #ccc; margin-bottom: 30px;">Pan artesanal, carne 100% de res y salsas de la casa.</p>
   <div class="card">
     <div class="card-header"><h3>Hamburguesa de carne</h3><span class="price">$28.000</span></div>
@@ -126,15 +144,14 @@ body{ margin: 0; background: var(--negro); color: var(--blanco); font-family: 'P
     <div class="card-header"><h3>Parrilla Mixta Premium</h3><span class="price">$180.000</span></div>
     <p>Lomo fino, chorizo, pollo, chicharrón y vegetales a la parrilla.</p>
   </div>
+</section>
 
-
-  <!-- FOOTER SEPARADO -->
-  <div class="card-footer">
+<!-- FOOTER SEPARADO Y FUERA -->
+<section class="card-footer">
     <p>📱 WhatsApp: 300 4356410</p>
     <p>📸 Instagram: @benditaparrillada</p>
     <p>📍 Dirección: Carrera 25 #15 - Valledupar, Cesar</p>
     <p>Abierto: Martes a Domingo 5:00pm - 11:00pm</p>
-  </div>
 </section>
 
 </body>
