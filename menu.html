@@ -15,79 +15,46 @@
   --gris-texto: #B0B0B0;
 }
 
-body{ 
-  margin: 0; 
-  background: var(--negro); 
-  color: var(--blanco); 
-  font-family: 'Poppins', sans-serif; 
-}
+body{ margin: 0; background: var(--negro); color: var(--blanco); font-family: 'Poppins', sans-serif; }
 
-/* TITULOS CON EFECTO */
+/* EFECTOS TITULOS */
 .fire-title {
-  font-size: 28px;
-  font-weight: 900;
-  text-align: left;
-  color: #ff3300;
+  font-size: 28px; font-weight: 900; text-align: left; color: #ff3300;
   text-shadow: 0 0 5px #ff0000, 0 0 10px #ff5500, 0 0 20px #ff8800;
-  animation: fire 1.5s infinite alternate;
-  margin-bottom: 8px;
+  animation: fire 1.5s infinite alternate; margin-bottom: 8px;
 }
-@keyframes fire {
- 0% { transform: scale(1); }
- 100% { transform: scale(1.03); }
-} /* <- AQUÍ FALTABA ESTA LLAVE */
+@keyframes fire { 0%{transform:scale(1);} 100%{transform:scale(1.03);} }
 
 .cheese-title {
-  font-size: 28px;
-  font-weight: 900;
-  color: #FFD700;
-  text-shadow: 0 0 5px #FFA500, 0 0 10px #FFD700, 0 0 20px #FFA500;
-  animation: cheeseDrip 2s infinite ease-in-out;
-  margin-bottom: 8px;
+  font-size: 28px; font-weight: 900; text-align: left; color: #FFD700;
+  text-shadow: 0 0 5px #FFA500, 0 0 10px #FFD700;
+  animation: cheeseDrip 2s infinite ease-in-out; margin-bottom: 8px;
 }
-@keyframes cheeseDrip {
- 0%, 100% { transform: scale(1); }
- 50% { transform: scale(1.05); }
-}
+@keyframes cheeseDrip { 0%,100%{transform:scale(1);} 50%{transform:scale(1.05);} }
 
-/* HERO CON IMAGEN */
-.hero{ 
-  position: relative;
-  padding: 60px 20px 40px;
-  background: url('https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=1000') center/cover no-repeat;
+.brasa-title {
+  font-size: 28px; font-weight: 900; text-align: left; color: #FF4500;
+  text-shadow: 0 0 5px #FF4500, 0 0 10px #FF8C00;
+  animation: brasaGlow 1.8s infinite alternate; margin-bottom: 8px;
 }
-.hero::before{
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.6);
-}
+@keyframes brasaGlow { 0%{transform:translateY(0);} 100%{transform:translateY(-2px);} }
+
+/* HERO */
+.hero{ position: relative; padding: 60px 20px 40px; background: url('https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=1000') center/cover no-repeat; }
+.hero::before{ content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); }
 .hero-content{ position: relative; z-index: 2; }
 .hero h1{ font-size: 2.5rem; font-weight: 900; line-height: 1.1; margin: 0 0 15px; }
 .hero p{ color: var(--gris-texto); font-size: 0.95rem; line-height: 1.6; margin-bottom: 30px; }
-
 .hero-botones{ display: flex; gap: 12px; }
-.btn{ 
-  flex: 1;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: var(--blanco); 
-  padding: 14px; 
-  border-radius: 12px; 
-  text-decoration: none; 
-  font-weight: 600; 
-  font-size: 14px; 
-  text-align: center;
-  backdrop-filter: blur(5px);
-}
+.btn{ flex: 1; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--blanco); padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 14px; text-align: center; }
 
-/* TARJETAS */
-.card{ 
-  background: var(--gris-card); 
-  border-radius: 16px; 
-  padding: 20px; 
-  margin-bottom: 15px; 
-}
+/* CARDS */
+.card{ background: var(--gris-card); border-radius: 16px; padding: 20px; margin-bottom: 15px; }
+.card-header{ display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px; }
+.card h3{ font-size: 1.1rem; font-weight: 700; margin: 0; }
+.price{ color: var(--naranja); font-size: 1.2rem; font-weight: 800; }
+.card p{ color: var(--gris-texto); font-size: 0.9rem; line-height: 1.5; margin: 0; }
+
 </style>
 </head>
 <body>
@@ -108,19 +75,79 @@ body{
     </div>
 </section>
 
-<!-- SECCIÓN HAMBURGUESAS -->
+<!-- HAMBURGUESAS $ -->
 <section style="padding: 40px 20px; background: #000;">
   <h2 class="fire-title">🔥 Hamburguesas a la brasa 🔥</h2> 
   <p style="color: #ccc; margin-bottom: 30px;">Pan artesanal, carne 100% de res y salsas de la casa.</p>
-  <!-- tus cards aquí -->
+  <div class="card">
+    <div class="card-header"><h3>Bendita Clásica</h3><span class="price">$28.000</span></div>
+    <p>Carne 150g, queso, lechuga, tomate, cebolla y salsa bendita.</p>
+  </div>
+  <div class="card">
+    <div class="card-header"><h3>BBQ Bacon</h3><span class="price">$32.000</span></div>
+    <p>Carne 150g, tocineta, queso cheddar, cebolla caramelizada y salsa BBQ.</p>
+  </div>
+  <div class="card">
+    <div class="card-header"><h3>Doble Costra</h3><span class="price">$36.000</span></div>
+    <p>2 carnes de 120g, doble queso, pepinillos y salsa especial.</p>
+  </div>
 </section>
 
-<!-- SECCIÓN SALCHIPAPAS -->
+<!-- SALCHIPAPAS $ -->
 <section style="padding: 40px 20px; background: #0a0a0a;">
   <h2 class="cheese-title">🧀 Salchipapas Benditas 🧀</h2>
   <p style="color: #ccc; margin-bottom: 30px;">Papa a la francesa + salchicha parrillera + 3 salsas.</p>
-  <!-- tus cards aquí -->
+  <div class="card">
+    <div class="card-header"><h3>Salchipapa Personal</h3><span class="price">$18.000</span></div>
+    <p>Para 1 persona. Papas, salchicha y salsas: ajo, rosada y tártara.</p>
+  </div>
+  <div class="card">
+    <div class="card-header"><h3>Salchipapa Familiar</h3><span class="price">$35.000</span></div>
+    <p>Para 3-4 personas. Extra tocineta y maíz.</p>
+  </div>
+  <div class="card">
+    <div class="card-header"><h3>Salchipapa Parrillera</h3><span class="price">$29.000</span></div>
+    <p>Con chorizo, pollo desmechado y queso fundido.</p>
+  </div>
 </section>
+
+<!-- PARRILLAS $ -->
+<section style="padding: 40px 20px; background: #000;">
+  <h2 class="brasa-title">🍖 Parrillas para compartir 🍖</h2>
+  <p style="color: #ccc; margin-bottom: 30px;">Ideales para 2 a 4 personas. Vienen con arepa, yuca y ensalada.</p>
+  <div class="card">
+    <div class="card-header"><h3>Parrilla 2 Personas</h3><span class="price">$120.000</span></div>
+    <p>Chorizo, morcilla, punta de anca, pollo y arepa mantequilla.</p>
+  </div>
+  <div class="card">
+    <div class="card-header"><h3>Parrilla 4 Personas</h3><span class="price">$220.000</span></div>
+    <p>Costilla, chorizo, morcilla, pollo, punta de anca y papas criollas.</p>
+  </div>
+  <div class="card">
+    <div class="card-header"><h3>Parrilla Mixta Premium</h3><span class="price">$180.000</span></div>
+    <p>Lomo fino, chorizo, pollo, chicharrón y vegetales a la parrilla.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="text-align: center; padding: 40px 20px; max-width: 500px; margin: 50px auto 0 auto; background: #111; border-radius: 20px; border: 1px solid #222;">
+  <hr style="width: 60%; margin: 0 auto 30px auto; border: none; height: 2px; background: linear-gradient(90deg, transparent, #FF8C00, transparent);">
+  <p style="margin: 18px 0; font-size: 17px;">
+    <span style="font-size: 20px;">📱</span> 
+    <a href="https://wa.me/573004356410" style="color: #25D366; font-weight: 700; text-decoration: none;">WhatsApp: 300 4356410</a>
+  </p>
+  <p style="margin: 18px 0; font-size: 17px;">
+    <span style="font-size: 20px;">📷</span> 
+    <a href="https://instagram.com/benditaparrillada" style="color: #FF8C00; font-weight: 700; text-decoration: none;">Instagram: @benditaparrillada</a>
+  </p>
+  <p style="margin: 18px 0; font-size: 16px; color: #B0B0B0;">
+    <span style="font-size: 20px;">📍</span> 
+    Dirección: Carrera 25 #15 - Valledupar, Cesar
+  </p>
+  <p style="margin-top: 30px; font-size: 14px; color: #666;">
+    Abierto: Martes a Domingo 5:00pm - 11:00pm
+  </p>
+</footer>
 
 </body>
 </html>
