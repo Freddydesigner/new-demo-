@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galería - Bendita Parrillada</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --negro: #0A0A0A;
+  --gris-card: #1A1A1A;
+  --naranja: #FF8C00;
+  --blanco: #FFFFFF;
+}
+
+body{ 
+  margin: 0; 
+  background: var(--negro); 
+  color: var(--blanco); 
+  font-family: 'Poppins', sans-serif; 
+  padding: 20px;
+}
+
+.header{
+  text-align: center;
+  margin-bottom: 30px;
+}
+.header h1{
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin: 0;
+}
+.header h1 span{ color: var(--naranja); }
+
+.btn-back{
+  display: inline-block;
+  background: var(--naranja);
+  color: var(--negro);
+  padding: 12px 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+/* GALERIA GRID */
+.galeria{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.galeria-item{
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--gris-card);
+  aspect-ratio: 1/1;
+}
+
+.galeria-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.galeria-item:hover img{
+  transform: scale(1.1);
+}
+
+.galeria-item p{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  padding: 15px 10px 10px;
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media(min-width: 768px){
+  .galeria{ grid-template-columns: repeat(3, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<a href="index.html" class="btn-back">← Volver al Menú</a>
+
+<div class="header">
+  <h1>Galería <span>Bendita</span></h1>
+  <p>Antoja tus ojos antes que el estómago 🔥</p>
+</div>
+
+<div class="galeria">
+  
+  <div class="galeria-item">
+    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=500" alt="Hamburguesa">
+    <p>Hamburguesas a la brasa</p>
+  </div>
+
+  <div class="galeria-item">
+    <img src="https://images.unsplash.com/photo-1541592106381-7e3d10e1e2b3?q=80&w=500" alt="Salchipapa">
+    <p>Salchipapa Parrillera</p>
+  </div>
+
+  <div class="galeria-item">
+    <img src="https://images.unsplash.com/photo-1529193591185-1575a1a8e2a3?q=80&w=500" alt="Parrilla">
+    <p>Parrilla para 4 personas</p>
+  </div>
+
+  <div class="galeria-item">
+    <img src="https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=500" alt="Carne asada">
+    <p>Carne al carbón de leña</p>
+  </div>
+
+  <div class="galeria-item">
+    <img src="https://images.unsplash.com/photo-1544025162-d8d525a1a05d?q=80&w=500" alt="Chorizo">
+    <p>Chorizo + Morcilla</p>
+  </div>
+
+  <div class="galeria-item">
+    <img src="https://images.unsplash.com/photo-1571091718767-18d2e82f9d04?q=80&w=500" alt="Comida">
+    <p>Todo hecho con amor</p>
+  </div>
+
+</div>
+
+</body>
+</html>
